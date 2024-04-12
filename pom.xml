@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>DesktopApplicationsOnJavaFX.</artifactId>
+
+  <build>
+    <plugins>
+      <!--      JavaFX-->
+      <plugin>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.rect2m.Main</mainClass>
+        </configuration>
+        <groupId>org.openjfx</groupId>
+        <version>${javafx.maven.plugin.version}</version>
+      </plugin>
+
+      <!--      Spotless-->
+      <plugin>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+              <goal>apply</goal>
+            </goals>
+            <id>format</id>
+            <phase>process-sources</phase>
+          </execution>
+        </executions>
+        <groupId>com.diffplug.spotless</groupId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <!--    JavaFX-->
+    <dependency>
+      <artifactId>javafx-controls</artifactId>
+      <groupId>org.openjfx</groupId>
+      <version>${javafx.version}</version>
+    </dependency>
+
+    <!--    JDBC-->
+    <dependency>
+      <artifactId>h2</artifactId>
+      <groupId>com.h2database</groupId>
+      <version>2.2.224</version>
+    </dependency>
+
+    <!--    MaterialFX-->
+    <dependency>
+      <artifactId>materialfx</artifactId>
+      <groupId>io.github.palexdev</groupId>
+      <version>11.17.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+    <dependency>
+      <artifactId>javafaker</artifactId>
+      <groupId>com.github.javafaker</groupId>
+      <version>1.0.2</version>
+    </dependency>
+
+  </dependencies>
+  <groupId>com.rect2m</groupId>
+
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <properties>
+    <!--    JavaFX-->
+    <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+    <javafx.version>22</javafx.version>
+
+
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <version>1.0-SNAPSHOT</version>
+</project>
